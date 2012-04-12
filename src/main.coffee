@@ -43,14 +43,13 @@ require [
             reference: 0
             
         initialize: ->
-            console.log 'new record'
             
             if not @attributes.waveform
                 @value = undefined
             
         update: ->
             if @attributes.waveform 
-                @value = @value.slice -20       
+                @value = @value.slice -40       
             
         addValue: (val) ->
         
@@ -113,8 +112,10 @@ require [
             
         plot: ->
             @model.update()
-            console.log @model
-            $('#thermometer .content').text "#{ @model.value }°C"
+            
+
+
+            $('#thermometer .content').text "#{ @model.value/100 }°C"
                
                 
     class Wave extends Backbone.View
