@@ -36,6 +36,11 @@
     +box-shadow(rgb(40, 40, 40) 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset)    
     +text-shadow(0 1px 1px black)
     
+@mixin bump
+    +box-shadow(rgb(40, 40, 40) 0 -1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0)    
+    +text-shadow(0 1px 1px black)
+    
+
 
 
 html    
@@ -59,7 +64,7 @@ body
     
 #wave
     float: left
-    width: 750px
+    width: 800px
 #meter
     float: left
     width: 200px
@@ -85,14 +90,14 @@ body
         text-align: center
 
 .wave
-    width: 700px
+    width: 750px
     height: 150px
     margin: 20px 25px
     
     .content    
         +ditch
         border-radius: 4px
-        width: 700px
+        width: 750px
         height: 150px
     
     .caption
@@ -106,3 +111,55 @@ body
         color: gold
         float: right
         
+#phone
+    +ditch
+    margin: 0 25px
+    padding: 0 20px
+    height: 60px
+    border-radius: 4px
+    
+    #edit,
+    #number
+        color: grey(120)
+        height: 60px
+        line-height: 60px        
+        font-size: 150%
+        
+        
+    input
+        border: none
+        padding: 0 10px
+        width: 140px
+        background: inherit
+        height: 30px
+        line-height: 30px 
+        color: grey(120)       
+        font-size: 100%
+        +ditch
+        
+        &:focus
+            background: grey(40)
+            outline: none
+        
+    #edit
+        display: none
+    
+    button        
+        position: relative
+        top: -4px
+        +bump
+        border-radius: 4px
+        height: 30px
+        line-height: 30px
+        color: grey(120)
+        background: inherit
+        border: none
+        
+        &:hover
+            background: grey(40)
+            color: gold
+            
+        &:active
+            background: grey(30)
+            color: gold
+            

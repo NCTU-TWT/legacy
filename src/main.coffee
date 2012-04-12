@@ -114,7 +114,7 @@ require [
         className   : 'wave'
         template    : hogan.compile $('#wave-template').html()
         
-        width       : 700
+        width       : 750
         height      : 150
     
         model: Record
@@ -135,6 +135,21 @@ require [
             @path.attr
                 stroke: 'rgb(200, 200, 200)'
                 'stroke-width': 5
+            
+            lowerThreshold = @height * ( 1 - @model.get('lowerThreshold') / (@model.get('upperBound') - @model.get('lowerBound')))
+            
+            upperThreshold = @height * ( 1 - @model.get('upperThreshold') / (@model.get('upperBound') - @model.get('lowerBound')))
+            
+            @lowerThreshold = @paper.path "M 0 #{ lowerThreshold }L#{ @width } #{ lowerThreshold }"
+            @lowerThreshold.attr
+                stroke: 'rgba(80, 30, 30, 0.5)'
+                'stroke-width': 2
+                
+            @upperThreshold = @paper.path "M 0 #{ upperThreshold }L#{ @width } #{ upperThreshold }"
+            @upperThreshold.attr
+                stroke: 'rgba(80, 30, 30, 0.5)'
+                'stroke-width': 2
+            
             
             return @el
             
@@ -176,6 +191,43 @@ require [
                     path: path
         
     
+    class Phone extends Backbone.View
+    
+        
+        initialize: ->
+        
+            socket.on 'phone', (phoneNumber) =>
+                
+            
+                @phoneNumber = phoneNumber
+                $('#edit input').val phoneNumber
+                
+                
+                @render()
+                
+            $('#edit-button').click ->
+                $('#number').hide()
+                $('#edit').show()
+                $('#edit input').focus().select()
+            
+            $('#edit form').submit =>
+                
+                @phoneNumber = $('#edit input').val()
+            
+                console.log @phoneNumber
+            
+                $('#edit').hide()
+                $('#number span').text @phoneNumber
+                $('#number').show()
+                
+                socket.emit('phone', @phoneNumber);
+                
+                return false
+                
+        render: ->
+            $('#number span').text @phoneNumber
+                
+                
     
     class App extends Backbone.View
     
@@ -184,8 +236,12 @@ require [
         el      : $ '#container' 
     
         initialize: ->
-        
-        
+    
+            
+            socket.on 'boo', ->
+                console.log 'boo'
+                                
+            
             socket.on 'data#v0.1', (data) =>
             
                 matched = @collection.where { name: data.name }
@@ -222,3 +278,6 @@ require [
     $ ->
         app = new App
             collection: new Records
+            
+        phone = new Phone
+            
