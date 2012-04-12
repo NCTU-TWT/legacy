@@ -95,11 +95,17 @@ body {
 }
 
 /* line 57, ../../src/sass/style.sass */
+h1 {
+  margin: 20px 25px;
+  font-size: 200%;
+}
+
+/* line 61, ../../src/sass/style.sass */
 #templates {
   display: none;
 }
 
-/* line 60, ../../src/sass/style.sass */
+/* line 64, ../../src/sass/style.sass */
 #container {
   overflow: hidden;
   *zoom: 1;
@@ -107,19 +113,19 @@ body {
   margin: 20px auto;
 }
 
-/* line 65, ../../src/sass/style.sass */
+/* line 69, ../../src/sass/style.sass */
 #wave {
   float: left;
   width: 800px;
 }
 
-/* line 68, ../../src/sass/style.sass */
+/* line 72, ../../src/sass/style.sass */
 #meter {
   float: left;
   width: 200px;
 }
 
-/* line 72, ../../src/sass/style.sass */
+/* line 76, ../../src/sass/style.sass */
 .meter {
   -webkit-box-shadow: #282828 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
   -moz-box-shadow: #282828 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
@@ -133,7 +139,7 @@ body {
   font-size: 200%;
   text-align: center;
 }
-/* line 83, ../../src/sass/style.sass */
+/* line 87, ../../src/sass/style.sass */
 .meter .caption {
   color: #c8c8c8;
   height: 60px;
@@ -144,13 +150,13 @@ body {
   text-align: center;
 }
 
-/* line 92, ../../src/sass/style.sass */
+/* line 96, ../../src/sass/style.sass */
 .wave {
   width: 750px;
   height: 150px;
   margin: 20px 25px;
 }
-/* line 97, ../../src/sass/style.sass */
+/* line 101, ../../src/sass/style.sass */
 .wave .content {
   -webkit-box-shadow: #282828 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
   -moz-box-shadow: #282828 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
@@ -160,7 +166,7 @@ body {
   width: 750px;
   height: 150px;
 }
-/* line 103, ../../src/sass/style.sass */
+/* line 107, ../../src/sass/style.sass */
 .wave .caption {
   height: 60px;
   padding: 0 20px;
@@ -168,13 +174,13 @@ body {
   line-height: 60px;
   font-size: 200%;
 }
-/* line 110, ../../src/sass/style.sass */
+/* line 114, ../../src/sass/style.sass */
 .wave .value {
   color: gold;
   float: right;
 }
 
-/* line 114, ../../src/sass/style.sass */
+/* line 118, ../../src/sass/style.sass */
 #phone {
   -webkit-box-shadow: #282828 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
   -moz-box-shadow: #282828 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
@@ -185,7 +191,7 @@ body {
   height: 60px;
   border-radius: 4px;
 }
-/* line 121, ../../src/sass/style.sass */
+/* line 125, ../../src/sass/style.sass */
 #phone #edit,
 #phone #number {
   color: #787878;
@@ -193,7 +199,7 @@ body {
   line-height: 60px;
   font-size: 150%;
 }
-/* line 129, ../../src/sass/style.sass */
+/* line 133, ../../src/sass/style.sass */
 #phone input {
   border: none;
   padding: 0 10px;
@@ -208,16 +214,16 @@ body {
   box-shadow: #282828 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
   text-shadow: 0 1px 1px black;
 }
-/* line 140, ../../src/sass/style.sass */
+/* line 144, ../../src/sass/style.sass */
 #phone input:focus {
   background: #282828;
   outline: none;
 }
-/* line 144, ../../src/sass/style.sass */
+/* line 148, ../../src/sass/style.sass */
 #phone #edit {
   display: none;
 }
-/* line 147, ../../src/sass/style.sass */
+/* line 151, ../../src/sass/style.sass */
 #phone button {
   position: relative;
   top: -4px;
@@ -232,12 +238,12 @@ body {
   background: inherit;
   border: none;
 }
-/* line 158, ../../src/sass/style.sass */
+/* line 162, ../../src/sass/style.sass */
 #phone button:hover {
   background: #282828;
   color: gold;
 }
-/* line 162, ../../src/sass/style.sass */
+/* line 166, ../../src/sass/style.sass */
 #phone button:active {
   background: #1e1e1e;
   color: gold;
