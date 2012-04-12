@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Foo</title>
+        <link rel="stylesheet" href="stylesheets/font-awesome.css">
+        <link href="stylesheets/style.css" rel="stylesheet" type="text/css">
+        <script data-main="scripts/main" src="scripts/lib/require.js"></script>
+    </head>    
+    <body>
+        <article id="container">
+            <section id="wave">
+            </section>
+            <section id="meter">
+                <div id="thermometer">
+                    <div class="content"></div>
+                    <div class="caption"></div>
+                </div>
+                <div id="hydrometer">
+                    <div class="content"></div>
+                    <div class="caption"></div>
+                </div>
+            </section>
+        </article>
+        <div id="templates">
+            <div id="wave-template">
+                <div id="{{name}}" class="content">
+                </div>
+                <div class="caption">{{name}}<span class="value"></span></div>
+            </div>
+            <div id="hydrometer-template">
+            </div>
+            <div id="thermometer-template">
+            </div>
+        </div>
+    </body>
+</html>

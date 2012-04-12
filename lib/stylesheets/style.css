@@ -1,0 +1,177 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 17, ../../../../../../var/lib/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 20, ../../../../../../var/lib/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+body {
+  line-height: 1;
+}
+
+/* line 22, ../../../../../../var/lib/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 24, ../../../../../../var/lib/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 26, ../../../../../../var/lib/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 28, ../../../../../../var/lib/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 101, ../../../../../../var/lib/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 30, ../../../../../../var/lib/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 114, ../../../../../../var/lib/gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+@font-face {
+  font-family: "Ubuntu Mono";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Ubuntu Mono"), url("fonts/UbuntuMono.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Hammersmith One";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Hammersmith One"), url("fonts/HammersmithOne.woff") format("woff");
+}
+
+/* line 41, ../../src/sass/style.sass */
+html {
+  height: 100%;
+}
+
+/* line 46, ../../src/sass/style.sass */
+body {
+  font-family: Helvetica, Verdana, "LiHei Pro", "微軟正黑體", Arial, sans-serif;
+  height: 100%;
+  color: #c8c8c8;
+  background: #1e1e1e;
+}
+
+/* line 52, ../../src/sass/style.sass */
+#templates {
+  display: none;
+}
+
+/* line 55, ../../src/sass/style.sass */
+#container {
+  overflow: hidden;
+  *zoom: 1;
+  width: 1000px;
+  margin: 20px auto;
+}
+
+/* line 60, ../../src/sass/style.sass */
+#wave {
+  float: left;
+  width: 750px;
+}
+
+/* line 63, ../../src/sass/style.sass */
+#meter {
+  float: left;
+  width: 200px;
+}
+
+/* line 67, ../../src/sass/style.sass */
+#thermometer,
+#hydrometer {
+  -webkit-box-shadow: #282828 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
+  -moz-box-shadow: #282828 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
+  box-shadow: #282828 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
+  text-shadow: 0 1px 1px black;
+  width: 150px;
+  height: 150px;
+  margin: 20px 25px;
+  color: #3c78b4;
+  line-height: 150px;
+  font-size: 200%;
+  text-align: center;
+}
+/* line 79, ../../src/sass/style.sass */
+#thermometer .caption,
+#hydrometer .caption {
+  color: #c8c8c8;
+  height: 60px;
+  padding: 0 20px;
+  margin-top: -150px;
+  line-height: 60px;
+  font-size: 50%;
+  text-align: center;
+}
+
+/* line 88, ../../src/sass/style.sass */
+.wave {
+  width: 700px;
+  height: 150px;
+  margin: 20px 25px;
+}
+/* line 93, ../../src/sass/style.sass */
+.wave .content {
+  -webkit-box-shadow: #282828 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
+  -moz-box-shadow: #282828 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
+  box-shadow: #282828 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
+  text-shadow: 0 1px 1px black;
+  border-radius: 4px;
+  width: 700px;
+  height: 150px;
+}
+/* line 99, ../../src/sass/style.sass */
+.wave .caption {
+  height: 60px;
+  padding: 0 20px;
+  margin-top: -150px;
+  line-height: 60px;
+  font-size: 200%;
+}
+/* line 106, ../../src/sass/style.sass */
+.wave .value {
+  color: gold;
+  float: right;
+}

@@ -1,0 +1,109 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset"
+@import "compass/utilities/general"
+@import "compass/css3"
+
+
+@font-face
+    font:
+        family: 'Ubuntu Mono'
+        style: normal
+        weight: normal
+    src: local('Ubuntu Mono'), url('fonts/UbuntuMono.woff') format('woff')
+@font-face
+    font:
+        family: 'Hammersmith One'
+        style: normal
+        weight: normal
+    src: local('Hammersmith One'), url('fonts/HammersmithOne.woff') format('woff')
+
+@function grey($v)
+    @return rgb($v, $v, $v)
+    
+    
+@mixin nose
+    user-select: none
+    -webkit-user-select: none
+    -moz-user-select: none
+    -o-user-select: none
+    -ms-user-select: none
+    
+@mixin ditch
+    +box-shadow(rgb(40, 40, 40) 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset)    
+    +text-shadow(0 1px 1px black)
+    
+
+
+html    
+    height: 100%
+    
+    
+    
+body
+    font-family: Helvetica, Verdana, 'LiHei Pro', '微軟正黑體', Arial, sans-serif
+    height: 100%
+    color: grey(200)
+    background: grey(30)
+    
+#templates
+    display: none    
+
+#container
+    +clearfix
+    width: 1000px
+    margin: 20px auto
+    
+#wave
+    float: left
+    width: 750px
+#meter
+    float: left
+    width: 200px
+
+#thermometer,
+#hydrometer
+    +ditch
+    width: 150px
+    height: 150px
+    margin: 20px 25px
+    color: rgb(60, 120, 180)
+    line-height: 150px
+    font-size: 200%
+    text-align: center
+    
+    
+    .caption
+        color: grey(200)
+        height: 60px
+        padding: 0 20px
+        margin-top: -150px
+        line-height: 60px
+        font-size: 50%
+        text-align: center
+
+.wave
+    width: 700px
+    height: 150px
+    margin: 20px 25px
+    
+    .content    
+        +ditch
+        border-radius: 4px
+        width: 700px
+        height: 150px
+    
+    .caption
+        height: 60px
+        padding: 0 20px
+        margin-top: -150px
+        line-height: 60px
+        font-size: 200%
+        
+    .value
+        color: gold
+        float: right
+        
