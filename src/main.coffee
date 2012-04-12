@@ -201,8 +201,7 @@ require [
                 
                 if matched.length is 0
                 
-                    console.log data
-                    
+                  
                     if data.waveform is "false"
                         data.waveform = false
                 
