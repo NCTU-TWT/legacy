@@ -9,17 +9,11 @@
     </head>    
     <body>
         <article id="container">
+            <section id="phone">
+            </section>        
             <section id="wave">
             </section>
             <section id="meter">
-                <div id="thermometer">
-                    <div class="content"></div>
-                    <div class="caption"></div>
-                </div>
-                <div id="hydrometer">
-                    <div class="content"></div>
-                    <div class="caption"></div>
-                </div>
             </section>
         </article>
         <div id="templates">
@@ -28,9 +22,9 @@
                 </div>
                 <div class="caption">{{name}}<span class="value"></span></div>
             </div>
-            <div id="hydrometer-template">
-            </div>
-            <div id="thermometer-template">
+            <div id="meter-template">
+                <div class="content"></div>
+                <div class="caption">{{name}}</div>
             </div>
         </div>
     </body>

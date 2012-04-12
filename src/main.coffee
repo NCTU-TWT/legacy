@@ -66,57 +66,47 @@ require [
     class Records extends Backbone.Collection
         model: Record
         
-    class Hydrometer extends Backbone.View
+    class Meter extends Backbone.View
     
         tagName     : 'section'
-        id          : 'hydrometer'
-        template    : hogan.compile $('#hydrometer-template').html()
+        className   : 'meter'
+        template    : hogan.compile $('#meter-template').html()
         
         width       : 200
         height      : 200
     
         model: Record
     
-        render: ->
-                
-            $('#hydrometer .caption').text @model.get 'name'            
-            #@$el.html @template.render()
-            #$('#meter').append @el
-                
-            # @paper = Raphael 'hydrometer', @width, @height
-            
-            
-        plot: ->
-            @model.update()
-            $('#hydrometer .content').text "#{ @model.value }%"
-         
-    class Thermometer extends Backbone.View
+        initialize: ->
+            @id = @model.get 'name'
     
-        tagName     : 'section'
-        id          : 'thermometer'
-        template    : hogan.compile $('#thermometer-template').html()
-        
-        width       : 200
-        height      : 200
-    
-        model: Record
     
         render: ->
                 
-            $('#thermometer .caption').text @model.get 'name'     
-            #@$el.html @template.render()
-            #$('#meter').append @el
                 
-            # @paper = Raphael 'hydrometer', @width, @height
-            
+            @$el.html @template.render
+                name: @model.get 'name'
+                
+                
+            $('#meter').append @el
+                
             
         plot: ->
             @model.update()
             
-
-
-            $('#thermometer .content').text "#{ @model.value/100 }°C"
-               
+            name = @model.get 'name'
+            
+            
+            if name is 'Temperature'
+                value = Math.round(@model.value) / 100
+                unit = '°C'
+            else
+                value = @model.value
+                unit = '%'
+            
+            
+            
+            $('.content', @$el).text "#{ value }#{ unit }"
                 
     class Wave extends Backbone.View
     
@@ -213,15 +203,10 @@ require [
                             model: (@collection.where { name: data.name })[0]
                     
                         @chart[data.name].render()
-                    else
-                        if data.name is "Humidity"                            
-                            @chart[data.name] = new Hydrometer
-                                model: (@collection.where { name: data.name })[0]
-                            @chart[data.name].render()
-                        if data.name is "Temperature"                            
-                            @chart[data.name] = new Thermometer
-                                model: (@collection.where { name: data.name })[0]
-                            @chart[data.name].render()
+                    else                          
+                        @chart[data.name] = new Meter
+                            model: (@collection.where { name: data.name })[0]
+                        @chart[data.name].render()
                     
                 else
                     matched[0].addValue data.value

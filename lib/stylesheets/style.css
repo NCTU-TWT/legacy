@@ -120,8 +120,7 @@ body {
 }
 
 /* line 67, ../../src/sass/style.sass */
-#thermometer,
-#hydrometer {
+.meter {
   -webkit-box-shadow: #282828 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
   -moz-box-shadow: #282828 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
   box-shadow: #282828 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
@@ -134,9 +133,8 @@ body {
   font-size: 200%;
   text-align: center;
 }
-/* line 79, ../../src/sass/style.sass */
-#thermometer .caption,
-#hydrometer .caption {
+/* line 78, ../../src/sass/style.sass */
+.meter .caption {
   color: #c8c8c8;
   height: 60px;
   padding: 0 20px;
@@ -146,13 +144,13 @@ body {
   text-align: center;
 }
 
-/* line 88, ../../src/sass/style.sass */
+/* line 87, ../../src/sass/style.sass */
 .wave {
   width: 700px;
   height: 150px;
   margin: 20px 25px;
 }
-/* line 93, ../../src/sass/style.sass */
+/* line 92, ../../src/sass/style.sass */
 .wave .content {
   -webkit-box-shadow: #282828 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
   -moz-box-shadow: #282828 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
@@ -162,7 +160,7 @@ body {
   width: 700px;
   height: 150px;
 }
-/* line 99, ../../src/sass/style.sass */
+/* line 98, ../../src/sass/style.sass */
 .wave .caption {
   height: 60px;
   padding: 0 20px;
@@ -170,7 +168,7 @@ body {
   line-height: 60px;
   font-size: 200%;
 }
-/* line 106, ../../src/sass/style.sass */
+/* line 105, ../../src/sass/style.sass */
 .wave .value {
   color: gold;
   float: right;
