@@ -158,7 +158,7 @@ require [
             
             # digits
             value = Math.round(@model.value[@model.value.length-1].value * 10) / 10
-            $('.value', @$el).text "#{value} #{@model.get 'unit'}"
+            $('.value', @$el).text "#{value}"
     
             # wave                    
             points = []
