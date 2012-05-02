@@ -68,9 +68,6 @@ require [
         
     class Meter extends Backbone.View
     
-        tagName     : 'section'
-        className   : 'meter'
-        template    : hogan.compile $('#meter-template').html()
         
         width       : 200
         height      : 200
@@ -84,11 +81,6 @@ require [
         render: ->
                 
                 
-            @$el.html @template.render
-                name: @model.get 'name'
-                
-                
-            $('#meter').append @el
                 
             
         plot: ->
@@ -107,14 +99,72 @@ require [
             
             
             $('.content', @$el).text "#{ value }#{ unit }"
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+    class Thermometer extends Backbone.View
+    
+        initialize: ->
+            console.log 'hot'
+    
+        render: ->
+        
+        
+            @paper = Raphael "thermometer", 150, 320
+            
+            @circle = @paper.circle 120, 280, 15
+            @circle.attr
+                fill            : 'rgb(180, 60, 60)'
+                'stroke-width'  : 0
+                
+            @bar = @paper.path 'M 0 0'
+            @bar.attr
+                stroke: 'rgb(180, 60, 60)'
+                'stroke-width': 10
+                'stroke-linecap': 'round'
+    
+        plot: ->
+            @model.update()
+            
+            
+    
+            value = Math.round( (@model.value/10) ) / 10
+            
+            if not isNaN(value)
+                @bar.attr
+                    path: "M 120 280 L 120 #{ 270 - value*8 }"
+                    
+                    
+                # digits
+                $('#thermometer-value').text "#{ value }°C" 
+        
+    class Hydrometer extends Backbone.View
+        render: ->
+    
+        plot: ->
+            @model.update()
+    
+            value = Math.round( @model.value * 10 ) / 10
+            
+            if not isNaN(value)
+                # digits
+                $('#hydrometer-value').text "#{ value }%" 
+        
+        
+        
+    
                 
     class Wave extends Backbone.View
-    
-        tagName     : 'section'
-        className   : 'wave'
-        template    : hogan.compile $('#wave-template').html()
-        
-        width       : 750
+            
+        width       : 830
         height      : 150
     
         model: Record
@@ -124,11 +174,6 @@ require [
         
             name = @model.get 'name'
             
-            @$el.html @template.render
-                name: name
-            
-            $('#wave').append @el
-                
                 
             @paper = Raphael "#{ name }", @width, @height
             @path = @paper.path 'M 0 0'
@@ -157,8 +202,9 @@ require [
             @model.update()
             
             # digits
+            name = @model.get 'name'
             value = Math.round(@model.value[@model.value.length-1].value * 10) / 10
-            $('.value', @$el).text "#{value}"
+            $('#' + name).parent().children().children('.value').text "#{value} #{@model.get 'unit'}"
     
             # wave                    
             points = []
@@ -224,6 +270,9 @@ require [
                 
                 return false
                 
+            $('#sms-button').click ->
+                socket.emit('sms-test');
+                
         render: ->
             $('#number span').text @phoneNumber
                 
@@ -259,10 +308,18 @@ require [
                             model: (@collection.where { name: data.name })[0]
                     
                         @chart[data.name].render()
-                    else                          
-                        @chart[data.name] = new Meter
+                        
+                        
+                    if data.name is 'Temperature'
+                        @chart[data.name] = new Thermometer
                             model: (@collection.where { name: data.name })[0]
                         @chart[data.name].render()
+                        
+                    if data.name is 'Humidity'
+                        @chart[data.name] = new Hydrometer
+                            model: (@collection.where { name: data.name })[0]
+                        @chart[data.name].render()
+                    
                     
                 else
                     matched[0].addValue data.value

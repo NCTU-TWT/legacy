@@ -116,57 +116,84 @@ h1 {
 /* line 69, ../../src/sass/style.sass */
 #wave {
   float: left;
-  width: 800px;
+  width: 850px;
 }
 
 /* line 72, ../../src/sass/style.sass */
 #meter {
   float: left;
-  width: 200px;
+  width: 150px;
 }
 
-/* line 76, ../../src/sass/style.sass */
-.meter {
+/* line 77, ../../src/sass/style.sass */
+#thermometer {
+  width: 150px;
+  height: 320px;
+  margin: 20px 0;
+  line-height: 150px;
+  font-size: 150%;
+  text-align: center;
+}
+
+/* line 86, ../../src/sass/style.sass */
+#thermometer-value {
+  width: 100px;
+  height: 60px;
+  margin-top: -135px;
+  line-height: 60px;
+  text-align: center;
+  color: #b43c3c;
+}
+
+/* line 95, ../../src/sass/style.sass */
+#hydrometer {
   -webkit-box-shadow: #282828 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
   -moz-box-shadow: #282828 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
   box-shadow: #282828 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
   text-shadow: 0 1px 1px black;
   width: 150px;
   height: 150px;
-  margin: 20px 25px;
-  color: #3c78b4;
+  margin: 20px 0;
   line-height: 150px;
-  font-size: 200%;
-  text-align: center;
-}
-/* line 87, ../../src/sass/style.sass */
-.meter .caption {
-  color: #c8c8c8;
-  height: 60px;
-  padding: 0 20px;
-  margin-top: -150px;
-  line-height: 60px;
-  font-size: 50%;
   text-align: center;
 }
 
-/* line 96, ../../src/sass/style.sass */
-.wave {
-  width: 750px;
-  height: 150px;
-  margin: 20px 25px;
+/* line 103, ../../src/sass/style.sass */
+#hydrometer-caption {
+  width: 150px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 200%;
+  text-align: center;
 }
-/* line 101, ../../src/sass/style.sass */
+
+/* line 110, ../../src/sass/style.sass */
+#hydrometer-value {
+  width: 150px;
+  height: 90px;
+  line-height: 90px;
+  font-size: 200%;
+  text-align: center;
+  color: #3c78b4;
+}
+
+/* line 119, ../../src/sass/style.sass */
+.wave {
+  width: 830px;
+  height: 150px;
+  margin: 20px 20px 20px 0;
+}
+/* line 124, ../../src/sass/style.sass */
 .wave .content {
   -webkit-box-shadow: #282828 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
   -moz-box-shadow: #282828 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
   box-shadow: #282828 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
   text-shadow: 0 1px 1px black;
   border-radius: 4px;
-  width: 750px;
+  width: 830px;
   height: 150px;
 }
-/* line 107, ../../src/sass/style.sass */
+/* line 130, ../../src/sass/style.sass */
 .wave .caption {
   height: 60px;
   padding: 0 20px;
@@ -174,32 +201,33 @@ h1 {
   line-height: 60px;
   font-size: 200%;
 }
-/* line 114, ../../src/sass/style.sass */
+/* line 137, ../../src/sass/style.sass */
 .wave .value {
   color: gold;
   float: right;
 }
 
-/* line 118, ../../src/sass/style.sass */
+/* line 141, ../../src/sass/style.sass */
 #phone {
   -webkit-box-shadow: #282828 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
   -moz-box-shadow: #282828 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
   box-shadow: #282828 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
   text-shadow: 0 1px 1px black;
-  margin: 0 25px;
   padding: 0 20px;
   height: 60px;
   border-radius: 4px;
 }
-/* line 125, ../../src/sass/style.sass */
+/* line 147, ../../src/sass/style.sass */
 #phone #edit,
-#phone #number {
+#phone #number,
+#phone #sms {
+  float: left;
   color: #787878;
   height: 60px;
   line-height: 60px;
   font-size: 150%;
 }
-/* line 133, ../../src/sass/style.sass */
+/* line 157, ../../src/sass/style.sass */
 #phone input {
   border: none;
   padding: 0 10px;
@@ -214,16 +242,16 @@ h1 {
   box-shadow: #282828 0 1px 0, rgba(0, 0, 0, 0.5) 0 1px 3px 0 inset;
   text-shadow: 0 1px 1px black;
 }
-/* line 144, ../../src/sass/style.sass */
+/* line 168, ../../src/sass/style.sass */
 #phone input:focus {
   background: #282828;
   outline: none;
 }
-/* line 148, ../../src/sass/style.sass */
+/* line 172, ../../src/sass/style.sass */
 #phone #edit {
   display: none;
 }
-/* line 151, ../../src/sass/style.sass */
+/* line 175, ../../src/sass/style.sass */
 #phone button {
   position: relative;
   top: -4px;
@@ -238,13 +266,17 @@ h1 {
   background: inherit;
   border: none;
 }
-/* line 162, ../../src/sass/style.sass */
+/* line 186, ../../src/sass/style.sass */
 #phone button:hover {
   background: #282828;
   color: gold;
 }
-/* line 166, ../../src/sass/style.sass */
+/* line 190, ../../src/sass/style.sass */
 #phone button:active {
   background: #1e1e1e;
   color: gold;
+}
+/* line 194, ../../src/sass/style.sass */
+#phone #sms {
+  float: right;
 }
