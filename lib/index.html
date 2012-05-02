@@ -21,22 +21,36 @@
                         <button id="save-button">儲存</button>
                     </form>
                 </div>
+                <div id="sms">
+                        <button id="sms-button">發送簡訊</button>
+                </div>
             </section>        
             <section id="wave">
+                <section class="wave">
+                    <div id="AccelerometerX" class="content">
+                    </div>
+                    <div class="caption">AccelerometerX<span class="value"></span></div>                    
+                </section>
+                <section class="wave">
+                    <div id="AccelerometerY" class="content">
+                    </div>
+                    <div class="caption">AccelerometerY<span class="value"></span></div>                    
+                </section>
+                <section class="wave">
+                    <div id="AccelerometerZ" class="content">
+                    </div>
+                    <div class="caption">AccelerometerZ<span class="value"></span></div>                    
+                </section>
             </section>
             <section id="meter">
+                <section id="thermometer">
+                    <div id="thermometer-value"></div>                       
+                </section>
+                <section id="hydrometer">
+                    <div id="hydrometer-caption">Humidity</div>                    
+                    <div id="hydrometer-value">50</div>
+                </section>
             </section>
         </article>
-        <div id="templates">
-            <div id="wave-template">
-                <div id="{{name}}" class="content">
-                </div>
-                <div class="caption">{{name}}<span class="value"></span></div>
-            </div>
-            <div id="meter-template">
-                <div class="content"></div>
-                <div class="caption">{{name}}</div>
-            </div>
-        </div>
     </body>
 </html>
